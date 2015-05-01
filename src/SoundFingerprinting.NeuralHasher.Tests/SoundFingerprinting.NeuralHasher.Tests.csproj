@@ -44,6 +44,24 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Moq.4.2.1402.2112\lib\net40\Moq.dll</HintPath>
     </Reference>
+    <Reference Include="NAudio">
+      <HintPath>..\packages\NAudio.1.7.3\lib\net35\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="SoundFingerprinting">
+      <HintPath>..\packages\SoundFingerprinting.2.0.0.0\lib\net45\SoundFingerprinting.dll</HintPath>
+    </Reference>
+    <Reference Include="SoundFingerprinting.Audio">
+      <HintPath>..\packages\SoundFingerprinting.2.0.0.0\lib\net45\SoundFingerprinting.Audio.dll</HintPath>
+    </Reference>
+    <Reference Include="SoundFingerprinting.Audio.NAudio">
+      <HintPath>..\packages\SoundFingerprinting.Audio.NAudio.2.0.0.0\lib\net45\SoundFingerprinting.Audio.NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="SoundFingerprinting.Infrastructure">
+      <HintPath>..\packages\SoundFingerprinting.2.0.0.0\lib\net45\SoundFingerprinting.Infrastructure.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <Choose>
@@ -59,6 +77,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="AbstractTest.cs" />
     <Compile Include="BinaryOutputHelperTest.cs" />
     <Compile Include="DynamicReorderingAlgorithmTest.cs" />
     <Compile Include="NetworkFactoryTest.cs" />
@@ -71,17 +90,29 @@
       <Project>{87cc569e-7d2a-4159-8cc1-dd1b563553f5}</Project>
       <Name>SoundFingerprinting.NeuralHasher</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SoundFingerprinting.Tests\SoundFingerprinting.Tests.csproj">
-      <Project>{987da38d-5157-4d83-9b1d-83a0a62d0e94}</Project>
-      <Name>SoundFingerprinting.Tests</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SoundFingerprinting\SoundFingerprinting.csproj">
-      <Project>{56eb1986-589c-4da9-b961-5833bb4a7816}</Project>
-      <Name>SoundFingerprinting</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="x64\libfftw3-3.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x64\libfftw3f-3.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x64\libfftw3l-3.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\libfftw3-3.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\libfftw3f-3.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\libfftw3l-3.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
